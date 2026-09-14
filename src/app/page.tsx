@@ -154,8 +154,7 @@ export default function Home() {
               </Reveal>
               {/* <Reveal delay={0.2}>
                 <p className="mt-5 text-sm text-zinc-500">
-                  Free tier, no card required. Pro is ₹299/month when you need
-                  more.
+                  Free tier, no card required. GetHyre+ is $10/month when you need more.
                 </p>
               </Reveal> */}
             </div>

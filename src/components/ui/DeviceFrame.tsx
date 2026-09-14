@@ -14,7 +14,6 @@ export function PhoneFrame({
         className,
       )}
     >
-      <div className="absolute left-1/2 top-3.5 z-10 h-5 w-24 -translate-x-1/2 rounded-full bg-zinc-900/90" />
       <div className="overflow-hidden rounded-[2rem] bg-zinc-50">{children}</div>
     </div>
   );
