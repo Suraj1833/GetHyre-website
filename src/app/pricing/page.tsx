@@ -19,7 +19,11 @@ const comparison = [
   { feature: "AI mock interviews", free: "Limited", pro: "Extended" },
   { feature: "Job match scoring", free: "Included", pro: "Included" },
   { feature: "ATS score & fix list", free: "Included", pro: "Included" },
-  { feature: "Advanced AI skill insights", free: "Not included", pro: "Included" },
+  {
+    feature: "Advanced AI skill insights",
+    free: "Not included",
+    pro: "Included",
+  },
   { feature: "Career Planner", free: "Not included", pro: "Included" },
   { feature: "Usage meter", free: "Always visible", pro: "Always visible" },
 ];
@@ -35,7 +39,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "How does billing work?",
-    a: "GetHyre+ is $10 per month, billed in USD. You can also pay yearly and save 30%. Billing details will be confirmed when we open the beta to paid plans, and waitlist members will be told before anything is charged.",
+    a: "GetHyre+ is $10 per month. You can also pay yearly and save 30%. Billing details will be confirmed when we open the beta to paid plans, and waitlist members will be told before anything is charged.",
   },
   {
     q: "Can I cancel anytime?",
@@ -76,19 +80,29 @@ export default function PricingPage() {
                 <p className="font-display text-3xl font-extrabold tracking-tight text-ink">
                   GetHyre
                 </p>
-                <p className="mt-1.5 text-sm text-ink-muted">Find out where you stand</p>
+                <p className="mt-1.5 text-sm text-ink-muted">
+                  Find out where you stand
+                </p>
                 <ul className="mt-7 space-y-3.5">
                   {plans.free.features.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm text-ink-muted">
+                    <li
+                      key={item}
+                      className="flex gap-3 text-sm text-ink-muted">
                       <span className="mt-0.5 shrink-0 text-good">✓</span>
                       {item}
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto pt-10">
-                  <p className="font-display text-5xl font-extrabold text-ink">Free</p>
+                  <p className="font-display text-5xl font-extrabold text-ink">
+                    Free
+                  </p>
                   <p className="mt-1 text-sm text-ink-muted">Forever</p>
-                  <Button href="/waitlist" variant="secondary" size="lg" className="mt-6 w-full">
+                  <Button
+                    href="/waitlist"
+                    variant="secondary"
+                    size="lg"
+                    className="mt-6 w-full">
                     Join the waitlist
                   </Button>
                 </div>
@@ -107,10 +121,14 @@ export default function PricingPage() {
                       Most useful
                     </span>
                   </div>
-                  <p className="mt-1.5 text-sm text-white/75">For an active job hunt</p>
+                  <p className="mt-1.5 text-sm text-white/75">
+                    For an active job hunt
+                  </p>
                   <ul className="mt-7 space-y-3.5">
                     {plans.pro.features.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm text-white/85">
+                      <li
+                        key={item}
+                        className="flex gap-3 text-sm text-white/85">
                         <span className="mt-0.5 shrink-0">✓</span>
                         {item}
                       </li>
@@ -119,7 +137,10 @@ export default function PricingPage() {
                   <div className="mt-auto pt-10">
                     <p className="font-display text-5xl font-extrabold">
                       $10
-                      <span className="text-base font-semibold text-white/60"> /month</span>
+                      <span className="text-base font-semibold text-white/60">
+                        {" "}
+                        /month
+                      </span>
                     </p>
                     <p className="mt-1 text-sm text-white/60">
                       Billed monthly, or pay yearly and save 30%
@@ -128,8 +149,7 @@ export default function PricingPage() {
                       href="/waitlist"
                       variant="inverse"
                       size="lg"
-                      className="mt-6 w-full"
-                    >
+                      className="mt-6 w-full">
                       Join the waitlist
                     </Button>
                   </div>
@@ -165,8 +185,12 @@ export default function PricingPage() {
                 <tbody>
                   {comparison.map((row) => (
                     <tr key={row.feature} className="border-b border-zinc-100">
-                      <td className="py-4 text-sm font-medium text-ink">{row.feature}</td>
-                      <td className="py-4 text-center text-sm text-ink-muted">{row.free}</td>
+                      <td className="py-4 text-sm font-medium text-ink">
+                        {row.feature}
+                      </td>
+                      <td className="py-4 text-center text-sm text-ink-muted">
+                        {row.free}
+                      </td>
                       <td className="py-4 text-center text-sm font-semibold text-brand-700">
                         {row.pro}
                       </td>
@@ -181,9 +205,9 @@ export default function PricingPage() {
             <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-2xl border border-brand-100 bg-brand-50/60 p-5">
               <StatusPill status="good">No surprises</StatusPill>
               <p className="text-sm leading-relaxed text-ink-muted">
-                You always see what&apos;s left before you run out. We don&apos;t
-                deduct credits silently or stop a task halfway because a hidden
-                limit was reached.
+                You always see what&apos;s left before you run out. We
+                don&apos;t deduct credits silently or stop a task halfway
+                because a hidden limit was reached.
               </p>
             </div>
           </Reveal>
@@ -194,7 +218,10 @@ export default function PricingPage() {
       <section className="border-t border-zinc-100 py-20">
         <Container>
           <Reveal>
-            <SectionHeading eyebrow="FAQ" title="Questions worth answering upfront" />
+            <SectionHeading
+              eyebrow="FAQ"
+              title="Questions worth answering upfront"
+            />
           </Reveal>
           <Reveal delay={0.05}>
             <div className="mx-auto mt-10 max-w-3xl">
