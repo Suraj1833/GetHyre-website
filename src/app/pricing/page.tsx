@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading, BetaBadge, StatusPill } from "@/components/ui/Bits";
+import { SectionHeading, BetaBadge } from "@/components/ui/Bits";
 import { Accordion, type FaqItem } from "@/components/ui/Accordion";
 import { WaitlistCta } from "@/components/sections/WaitlistCta";
 import { plans } from "@/lib/site";
@@ -12,17 +12,6 @@ export const metadata: Metadata = {
   description:
     "GetHyre is free to start, with your Employability Score, job match scoring and basic ATS scoring. GetHyre+ adds extended resume optimisations, mock interviews and full Career Plan access.",
 };
-
-const comparison = [
-  { feature: "Employability Score", free: "Included", pro: "Included" },
-  { feature: "Resume optimisations", free: "Limited", pro: "Extended" },
-  { feature: "AI mock interviews", free: "Limited", pro: "Extended" },
-  { feature: "Job match scoring", free: "Included", pro: "Included" },
-  { feature: "ATS score & fix list", free: "Included", pro: "Included" },
-  { feature: "Advanced AI skill insights", free: "Not included", pro: "Included" },
-  { feature: "Career Planner", free: "Not included", pro: "Included" },
-  { feature: "Usage meter", free: "Always visible", pro: "Always visible" },
-];
 
 const faqs: FaqItem[] = [
   {
@@ -137,56 +126,6 @@ export default function PricingPage() {
               </div>
             </Reveal>
           </div>
-        </Container>
-      </section>
-
-      {/* Comparison table */}
-      <section className="border-t border-zinc-100 py-20">
-        <Container>
-          <Reveal>
-            <SectionHeading title="Compare the plans" />
-          </Reveal>
-          <Reveal delay={0.05}>
-            <div className="mx-auto mt-10 max-w-3xl overflow-x-auto">
-              <table className="w-full min-w-[520px] border-collapse text-left">
-                <thead>
-                  <tr className="border-b border-zinc-200">
-                    <th className="pb-4 text-xs font-bold uppercase tracking-wide text-zinc-400">
-                      Feature
-                    </th>
-                    <th className="pb-4 text-center text-xs font-bold uppercase tracking-wide text-zinc-400">
-                      Free
-                    </th>
-                    <th className="pb-4 text-center text-xs font-bold uppercase tracking-wide text-brand-600">
-                      GetHyre+
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparison.map((row) => (
-                    <tr key={row.feature} className="border-b border-zinc-100">
-                      <td className="py-4 text-sm font-medium text-ink">{row.feature}</td>
-                      <td className="py-4 text-center text-sm text-ink-muted">{row.free}</td>
-                      <td className="py-4 text-center text-sm font-semibold text-brand-700">
-                        {row.pro}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-2xl border border-brand-100 bg-brand-50/60 p-5">
-              <StatusPill status="good">No surprises</StatusPill>
-              <p className="text-sm leading-relaxed text-ink-muted">
-                You always see what&apos;s left before you run out. We don&apos;t
-                deduct credits silently or stop a task halfway because a hidden
-                limit was reached.
-              </p>
-            </div>
-          </Reveal>
         </Container>
       </section>
 
