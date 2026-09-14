@@ -3,10 +3,18 @@ import clsx from "clsx";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
-import { SectionHeading, BetaBadge, AiTag, Eyebrow } from "@/components/ui/Bits";
+import {
+  SectionHeading,
+  BetaBadge,
+  AiTag,
+  Eyebrow,
+} from "@/components/ui/Bits";
 import { PhoneFrame, BrowserFrame } from "@/components/ui/DeviceFrame";
 import { EmployabilityScoreCard } from "@/components/mockups/EmployabilityScore";
-import { AtsScoreCard, SuggestedEditCard } from "@/components/mockups/ResumeAts";
+import {
+  AtsScoreCard,
+  SuggestedEditCard,
+} from "@/components/mockups/ResumeAts";
 import { JobMatchList } from "@/components/mockups/JobMatchList";
 import { InterviewResultsCard } from "@/components/mockups/InterviewResults";
 import { CareerPlanCard, SkillGapTable } from "@/components/mockups/CareerPlan";
@@ -131,10 +139,12 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-6 max-w-xl text-lg leading-8 text-ink-muted">
-                  GetHyre scores your job readiness out of 100, shows you exactly
-                  which part is holding you back, and gives you the AI tools to
-                  repair it — resume, interviews, skills and job matching in one
-                  place. Built for students and early-career job seekers in India.
+                  GetHyre scores your job readiness out of 100, and shows you
+                  exactly which part is holding you back. One dashboard tracks
+                  it all, job matches with your resume tailored to every JD,
+                  your ATS score, the skill gaps to close before you apply, mock
+                  interviews to walk in ready, and a career plan if you&apos;re
+                  starting from scratch
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
@@ -147,11 +157,12 @@ export default function Home() {
                   </Button>
                 </div>
               </Reveal>
-              <Reveal delay={0.2}>
+              {/* <Reveal delay={0.2}>
                 <p className="mt-5 text-sm text-zinc-500">
-                  Free tier, no card required. Pro is ₹299/month when you need more.
+                  Free tier, no card required. Pro is ₹299/month when you need
+                  more.
                 </p>
-              </Reveal>
+              </Reveal> */}
             </div>
 
             <Reveal delay={0.1}>
@@ -178,8 +189,7 @@ export default function Home() {
               <RevealItem key={link.href}>
                 <Link
                   href={link.href}
-                  className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_45px_-25px_rgba(75,58,240,0.55)]"
-                >
+                  className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_45px_-25px_rgba(75,58,240,0.55)]">
                   <div className="flex items-center gap-2">
                     <p className="font-display text-base font-bold text-ink group-hover:text-brand-700">
                       {link.label}
@@ -191,8 +201,18 @@ export default function Home() {
                   </p>
                   <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-600">
                     Explore
-                    <svg viewBox="0 0 20 20" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                      <path d="M4 10h11M11 6l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      viewBox="0 0 20 20"
+                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden>
+                      <path
+                        d="M4 10h11M11 6l4 4-4 4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
                 </Link>
@@ -204,7 +224,9 @@ export default function Home() {
 
       {/* Feature deep dives */}
       {features.map((feature, i) => (
-        <section key={feature.href} className="border-b border-zinc-100 py-20 sm:py-24">
+        <section
+          key={feature.href}
+          className="border-b border-zinc-100 py-20 sm:py-24">
           <Container>
             <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
               <Reveal className={clsx("min-w-0", i % 2 === 1 && "lg:order-2")}>
@@ -219,20 +241,31 @@ export default function Home() {
                   {feature.points.map((point) => (
                     <li key={point} className="flex gap-3">
                       <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600">
-                        <svg viewBox="0 0 20 20" className="h-3 w-3" fill="currentColor" aria-hidden>
+                        <svg
+                          viewBox="0 0 20 20"
+                          className="h-3 w-3"
+                          fill="currentColor"
+                          aria-hidden>
                           <path d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" />
                         </svg>
                       </span>
-                      <span className="text-sm leading-relaxed text-ink-muted">{point}</span>
+                      <span className="text-sm leading-relaxed text-ink-muted">
+                        {point}
+                      </span>
                     </li>
                   ))}
                 </ul>
-                <Button href={feature.href} variant="secondary" className="mt-8">
+                <Button
+                  href={feature.href}
+                  variant="secondary"
+                  className="mt-8">
                   More on {feature.label}
                 </Button>
               </Reveal>
 
-              <Reveal delay={0.1} className={clsx("min-w-0", i % 2 === 1 && "lg:order-1")}>
+              <Reveal
+                delay={0.1}
+                className={clsx("min-w-0", i % 2 === 1 && "lg:order-1")}>
                 {feature.visual}
               </Reveal>
             </div>
@@ -256,8 +289,12 @@ export default function Home() {
                   <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl font-display text-sm font-bold text-white">
                     {i + 1}
                   </span>
-                  <h3 className="mt-4 text-base font-bold text-ink">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{step.body}</p>
+                  <h3 className="mt-4 text-base font-bold text-ink">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                    {step.body}
+                  </p>
                 </div>
               </RevealItem>
             ))}
@@ -279,8 +316,12 @@ export default function Home() {
           <div className="mx-auto mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
             <Reveal>
               <div className="h-full rounded-3xl border border-zinc-200 bg-white p-7">
-                <p className="font-display text-lg font-bold text-ink">{plans.free.name}</p>
-                <p className="mt-1 text-sm text-ink-muted">{plans.free.tagline}</p>
+                <p className="font-display text-lg font-bold text-ink">
+                  {plans.free.name}
+                </p>
+                <p className="mt-1 text-sm text-ink-muted">
+                  {plans.free.tagline}
+                </p>
                 <p className="mt-5 font-display text-4xl font-extrabold text-ink">
                   {plans.free.price}
                   <span className="text-base font-semibold text-zinc-400">
@@ -289,13 +330,18 @@ export default function Home() {
                 </p>
                 <ul className="mt-6 space-y-3">
                   {plans.free.features.map((item) => (
-                    <li key={item} className="flex gap-2.5 text-sm text-ink-muted">
+                    <li
+                      key={item}
+                      className="flex gap-2.5 text-sm text-ink-muted">
                       <span className="mt-0.5 text-good">✓</span>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button href="/waitlist" variant="secondary" className="mt-7 w-full">
+                <Button
+                  href="/waitlist"
+                  variant="secondary"
+                  className="mt-7 w-full">
                   Join the waitlist
                 </Button>
               </div>
@@ -305,8 +351,12 @@ export default function Home() {
               <div className="brand-gradient relative h-full overflow-hidden rounded-3xl p-7 text-white">
                 <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-2xl" />
                 <div className="relative">
-                  <p className="font-display text-lg font-bold">{plans.pro.name}</p>
-                  <p className="mt-1 text-sm text-white/75">{plans.pro.tagline}</p>
+                  <p className="font-display text-lg font-bold">
+                    {plans.pro.name}
+                  </p>
+                  <p className="mt-1 text-sm text-white/75">
+                    {plans.pro.tagline}
+                  </p>
                   <p className="mt-5 font-display text-4xl font-extrabold">
                     {plans.pro.price}
                     <span className="text-base font-semibold text-white/60">
@@ -315,13 +365,18 @@ export default function Home() {
                   </p>
                   <ul className="mt-6 space-y-3">
                     {plans.pro.features.map((item) => (
-                      <li key={item} className="flex gap-2.5 text-sm text-white/85">
+                      <li
+                        key={item}
+                        className="flex gap-2.5 text-sm text-white/85">
                         <span className="mt-0.5">✓</span>
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <Button href="/pricing" variant="inverse" className="mt-7 w-full">
+                  <Button
+                    href="/pricing"
+                    variant="inverse"
+                    className="mt-7 w-full">
                     Compare plans
                   </Button>
                 </div>

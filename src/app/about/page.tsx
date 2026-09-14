@@ -52,11 +52,11 @@ export default function AboutPage() {
                 doesn&apos;t exist.
               </p>
               <p className="mt-5 text-lg leading-8 text-ink-muted">
-                GetHyre is our attempt at building that loop. One score that says
-                where you stand, a breakdown that says which part is weak, and
-                the tools to fix each part — resume, interviews, skills and job
-                matching in one place, so the feedback you get is specific enough
-                to act on this week.
+                GetHyre is our attempt at building that loop. A breakdown of
+                where you stand, which part is weak, and the tools to fix it:
+                job matching with your resume tailored to the JD, skill gaps,
+                mock interviews, a plan if you&apos;re starting from scratch.
+                Feedback specific enough to act on this week.
               </p>
             </div>
           </Reveal>
@@ -76,7 +76,9 @@ export default function AboutPage() {
               <Reveal key={item.title} delay={i * 0.06}>
                 <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_45px_-25px_rgba(75,58,240,0.55)]">
                   <h3 className="text-base font-bold text-ink">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.body}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                    {item.body}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -93,9 +95,10 @@ export default function AboutPage() {
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                 GetHyre is in private beta. We have no user counts, testimonials
-                or company logos to show you, because we haven&apos;t earned them
-                yet — and we&apos;d rather say that than invent them. If you want
-                to be one of the first people to use it, the waitlist is open.
+                or company logos to show you, because we haven&apos;t earned
+                them yet — and we&apos;d rather say that than invent them. If
+                you want to be one of the first people to use it, the waitlist
+                is open.
               </p>
             </div>
           </Reveal>

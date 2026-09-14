@@ -22,7 +22,7 @@ const next = [
   },
   {
     title: "You start on the Free plan",
-    body: "Employability Score, job match scoring, 5 resume generations and 3 mock interviews a month. No card needed.",
+    body: "Full access to build your first personalized dashboard. Includes employability score, job matching, resume optimizer, and mock interviews.",
   },
 ];
 
@@ -67,7 +67,9 @@ export default function WaitlistPage() {
                         {i + 1}
                       </span>
                       <div>
-                        <p className="text-sm font-semibold text-ink">{item.title}</p>
+                        <p className="text-sm font-semibold text-ink">
+                          {item.title}
+                        </p>
                         <p className="mt-1 text-sm leading-relaxed text-ink-muted">
                           {item.body}
                         </p>

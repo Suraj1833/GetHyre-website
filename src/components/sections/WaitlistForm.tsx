@@ -58,13 +58,18 @@ export function WaitlistForm({
               dark
                 ? "border-white/20 bg-white/10 text-white"
                 : "border-good/30 bg-good-soft/50 text-ink",
-            )}
-          >
-            <p className="font-display text-base font-bold">You&apos;re on the list.</p>
-            <p className={clsx("mt-1.5 text-sm leading-relaxed", dark ? "text-white/75" : "text-ink-muted")}>
-              We&apos;ll email <span className="font-semibold">{email}</span> when your
-              beta invite is ready. Invites go out in small batches, so you may
-              wait a little.
+            )}>
+            <p className="font-display text-base font-bold">
+              You&apos;re on the list.
+            </p>
+            <p
+              className={clsx(
+                "mt-1.5 text-sm leading-relaxed",
+                dark ? "text-white/75" : "text-ink-muted",
+              )}>
+              We&apos;ll email <span className="font-semibold">{email}</span> as
+              soon as your beta invite is ready. Invites go out in small
+              batches, so hang tight.
             </p>
           </motion.div>
         ) : (
@@ -75,8 +80,7 @@ export function WaitlistForm({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="flex flex-col gap-3"
-            noValidate
-          >
+            noValidate>
             {showGoal ? (
               <div>
                 <label
@@ -84,8 +88,7 @@ export function WaitlistForm({
                   className={clsx(
                     "mb-1.5 block text-xs font-semibold",
                     dark ? "text-white/80" : "text-ink",
-                  )}
-                >
+                  )}>
                   What role are you targeting? (optional)
                 </label>
                 <input
@@ -111,8 +114,7 @@ export function WaitlistForm({
                   className={clsx(
                     "mb-1.5 block text-xs font-semibold",
                     dark ? "text-white/80" : "text-ink",
-                  )}
-                >
+                  )}>
                   Email address
                 </label>
               ) : (
@@ -120,7 +122,10 @@ export function WaitlistForm({
                   Email address
                 </label>
               )}
-              <div className={clsx(showGoal ? "" : "flex flex-col gap-3 sm:flex-row")}>
+              <div
+                className={clsx(
+                  showGoal ? "" : "flex flex-col gap-3 sm:flex-row",
+                )}>
                 <input
                   id="email"
                   type="email"
@@ -148,8 +153,7 @@ export function WaitlistForm({
                       dark
                         ? "bg-white text-brand-700 hover:bg-white/90"
                         : "bg-brand-500 text-white hover:bg-brand-600",
-                    )}
-                  >
+                    )}>
                     {state === "loading" ? "Joining…" : "Join waitlist"}
                   </button>
                 ) : null}
@@ -165,8 +169,7 @@ export function WaitlistForm({
                   dark
                     ? "bg-white text-brand-700 hover:bg-white/90"
                     : "bg-brand-500 text-white hover:bg-brand-600",
-                )}
-              >
+                )}>
                 {state === "loading" ? "Joining…" : "Join the waitlist"}
               </button>
             ) : null}
@@ -174,12 +177,18 @@ export function WaitlistForm({
             {state === "error" ? (
               <p
                 role="alert"
-                className={clsx("text-xs", dark ? "text-rose-200" : "text-bad")}
-              >
+                className={clsx(
+                  "text-xs",
+                  dark ? "text-rose-200" : "text-bad",
+                )}>
                 {message}
               </p>
             ) : (
-              <p className={clsx("text-xs", dark ? "text-white/60" : "text-zinc-500")}>
+              <p
+                className={clsx(
+                  "text-xs",
+                  dark ? "text-white/60" : "text-zinc-500",
+                )}>
                 No spam. We email you once, when your invite is ready.
               </p>
             )}
