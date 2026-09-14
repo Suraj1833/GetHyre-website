@@ -45,7 +45,7 @@ export default function JobMatchPage() {
         benefits={[
           {
             title: "AI match scoring",
-            body: "Each listing is scored against your resume, skills and target role — not just keyword-matched.",
+            body: "Each listing is scored against your resume, skills and target role, not just keyword-matched.",
           },
           {
             title: "Colour-coded fit",
@@ -65,14 +65,14 @@ export default function JobMatchPage() {
       <SplitBlock
         eyebrow="Why it works"
         title="A high match score tells you where your effort pays off"
-        body="A tailored application to a job you're an 85% fit for beats fifty generic ones. The score gives you a reason to spend your time on the right listings — and shows you what's missing on the ones you want but don't yet qualify for."
+        body="A tailored application to a job you're an 85% fit for beats fifty generic ones. The score gives you a reason to spend your time on the right listings, and shows you what's missing on the ones you want but don't yet qualify for."
         points={[
           "Spot the roles where you're already competitive",
           "See which skills keep appearing in jobs just out of reach",
           "Feed those gaps straight into your Career Plan",
         ]}
         visual={
-          <BrowserFrame label="app.gethyre.ai/jobs">
+          <BrowserFrame label="gethyre.ai/jobs">
             <JobMatchList />
           </BrowserFrame>
         }

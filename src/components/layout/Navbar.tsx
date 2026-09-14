@@ -7,7 +7,8 @@ import clsx from "clsx";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/layout/Logo";
-import { APP_URL, productLinks } from "@/lib/site";
+import { StoreLink } from "@/components/layout/StoreLink";
+import { productLinks } from "@/lib/site";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -136,13 +137,9 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-            <a
-              href={APP_URL}
-              className="rounded-full px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink"
-              rel="noopener noreferrer"
-            >
+            <StoreLink className="rounded-full px-4 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-ink">
               Log in
-            </a>
+            </StoreLink>
             <Button href="/waitlist">Join Waitlist</Button>
           </div>
 
@@ -209,13 +206,9 @@ export function Navbar() {
                 >
                   About
                 </Link>
-                <a
-                  href={APP_URL}
-                  className="rounded-lg px-1 py-2.5 text-sm font-medium text-ink"
-                  rel="noopener noreferrer"
-                >
+                <StoreLink className="rounded-lg px-1 py-2.5 text-sm font-medium text-ink">
                   Log in
-                </a>
+                </StoreLink>
               </div>
               <Button href="/waitlist" onClick={closeAll} className="mt-4 w-full" size="lg">
                 Join Waitlist

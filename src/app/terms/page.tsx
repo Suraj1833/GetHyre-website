@@ -58,7 +58,7 @@ export default function TermsPage() {
     <LegalPage
       title="Terms & Conditions"
       updated="Not yet published"
-      intro="These terms govern your use of GetHyre.ai. The sections below are placeholders showing the intended structure — final legal text is pending."
+      intro="These terms govern your use of GetHyre.ai. The sections below are placeholders showing the intended structure, and the final legal text is pending."
       sections={sections}
     />
   );

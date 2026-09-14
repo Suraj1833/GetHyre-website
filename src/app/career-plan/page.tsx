@@ -11,7 +11,7 @@ import { CareerPlanCard, SkillGapTable } from "@/components/mockups/CareerPlan";
 export const metadata: Metadata = {
   title: "Career Plan",
   description:
-    "Set a target role, timeline and current level, and get an AI-generated week-by-week plan across skills, resume and interview prep — built on a real skill gap analysis.",
+    "Set a target role, timeline and current level, and get an AI-generated week-by-week plan across skills, resume and interview prep, built on a real skill gap analysis.",
 };
 
 export default function CareerPlanPage() {
@@ -25,9 +25,9 @@ export default function CareerPlanPage() {
             <span className="brand-gradient-text">not a list of advice.</span>
           </>
         }
-        body="Tell GetHyre the role you want, how long you have, and where you're starting from. You get a week-by-week plan across skills, resume and interview prep — tracked to completion, so you can see whether you're actually moving."
+        body="Tell GetHyre the role you want, how long you have, and where you're starting from. You get a week-by-week plan across skills, resume and interview prep, tracked to completion, so you can see whether you're actually moving."
         visual={
-          <BrowserFrame label="app.gethyre.ai/career-plan">
+          <BrowserFrame label="gethyre.ai/career-plan">
             <CareerPlanCard />
           </BrowserFrame>
         }
@@ -47,7 +47,7 @@ export default function CareerPlanPage() {
           },
           {
             title: "Current level",
-            body: "Beginner, Intermediate or Advanced — so you don't get told to start where you already are.",
+            body: "Beginner, Intermediate or Advanced, so you don't get told to start where you already are.",
           },
           {
             title: "Tracked weekly",

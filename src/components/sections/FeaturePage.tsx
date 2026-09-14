@@ -79,7 +79,12 @@ export function BenefitGrid({
         <Reveal>
           <SectionHeading eyebrow={eyebrow} title={title} body={body} />
         </Reveal>
-        <RevealStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealStagger
+          className={clsx(
+            "mt-12 grid gap-5 sm:grid-cols-2",
+            benefits.length === 5 ? "lg:grid-cols-5" : "lg:grid-cols-4",
+          )}
+        >
           {benefits.map((benefit, i) => (
             <RevealItem key={benefit.title}>
               <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-[0_20px_45px_-25px_rgba(75,58,240,0.55)]">

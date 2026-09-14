@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const sections: LegalSection[] = [
   {
     heading: "Information we collect",
-    body: "Placeholder. Describe the data collected at signup and in use — email address, resume content and uploaded files, target role and career preferences, mock interview recordings and transcripts, and usage data.",
+    body: "Placeholder. Describe the data collected at signup and in use: email address, resume content and uploaded files, target role and career preferences, mock interview recordings and transcripts, and usage data.",
   },
   {
     heading: "How we use your information",
@@ -46,7 +46,7 @@ export default function PrivacyPolicyPage() {
     <LegalPage
       title="Privacy Policy"
       updated="Not yet published"
-      intro="This page describes how GetHyre.ai collects, uses and protects your information. The sections below are placeholders showing the intended structure — final legal text is pending."
+      intro="This page describes how GetHyre.ai collects, uses and protects your information. The sections below are placeholders showing the intended structure, and the final legal text is pending."
       sections={sections}
     />
   );

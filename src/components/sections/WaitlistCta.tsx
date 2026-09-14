@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { WaitlistForm } from "@/components/sections/WaitlistForm";
 
 export function WaitlistCta({
-  title = "Find out where you stand — before the next application.",
+  title = "Find out where you stand before the next application.",
   body = "GetHyre is in private beta. Join the waitlist and we'll send your invite as seats open up.",
 }: {
   title?: string;

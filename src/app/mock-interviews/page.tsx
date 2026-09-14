@@ -31,7 +31,7 @@ export default function MockInterviewsPage() {
         body="Most students walk into their first interview having never said their answers out loud. Practise with role-specific questions, by text or recording, and get scored feedback on what actually went wrong."
         visual={
           <div className="relative">
-            <BrowserFrame label="app.gethyre.ai/interviews">
+            <BrowserFrame label="gethyre.ai/interviews">
               <InterviewResultsCard />
             </BrowserFrame>
             <div className="absolute -bottom-10 -right-2 w-56 sm:-right-8 sm:w-64">
@@ -52,7 +52,7 @@ export default function MockInterviewsPage() {
           },
           {
             title: "Content",
-            body: "Whether your answer has real substance — specifics, numbers, outcomes — or just describes duties.",
+            body: "Whether your answer has real substance (specifics, numbers, outcomes) or just describes duties.",
           },
           {
             title: "Confidence",
@@ -68,7 +68,7 @@ export default function MockInterviewsPage() {
       <SplitBlock
         eyebrow="Question by question"
         title="See exactly which answer let you down"
-        body="An overall score tells you how it went. The per-question breakdown tells you what to practise next — with the full transcript of every answer saved, so you can reread what you actually said instead of what you remember saying."
+        body="An overall score tells you how it went. The per-question breakdown tells you what to practise next, with the full transcript of every answer saved, so you can reread what you actually said instead of what you remember saying."
         points={[
           "Text or recorded practice, whichever you'll actually do",
           "Role-specific question sets, not generic filler",
