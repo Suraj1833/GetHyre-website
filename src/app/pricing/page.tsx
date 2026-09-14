@@ -10,7 +10,7 @@ import { plans } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "GetHyre is free to start — 5 resume generations, 3 mock interviews, job match scoring and your Employability Score. Pro is ₹299/month for unlimited use.",
+    "GetHyre is free to start, with 5 resume generations, 3 mock interviews, job match scoring and your Employability Score. Pro is ₹299/month for unlimited use.",
 };
 
 const comparison = [
@@ -19,23 +19,23 @@ const comparison = [
   { feature: "AI mock interviews", free: "3 / month", pro: "Unlimited" },
   { feature: "Job match scoring", free: "Included", pro: "Included" },
   { feature: "ATS score & fix list", free: "Included", pro: "Included" },
-  { feature: "Advanced AI skill insights", free: "—", pro: "Included" },
-  { feature: "Career Planner", free: "—", pro: "Included" },
+  { feature: "Advanced AI skill insights", free: "Not included", pro: "Included" },
+  { feature: "Career Planner", free: "Not included", pro: "Included" },
   { feature: "Usage meter", free: "Always visible", pro: "Always visible" },
 ];
 
 const faqs: FaqItem[] = [
   {
     q: "What happens when I hit a limit on the Free plan?",
-    a: "You'll see it coming. A usage meter shows how many resume generations and mock interviews you have left at all times — nothing is silently deducted, and you're never cut off mid-task without warning. When you run out, you can wait for the next month or upgrade to Pro.",
+    a: "You'll see it coming. A usage meter shows how many resume generations and mock interviews you have left at all times, so nothing is silently deducted and you're never cut off mid-task without warning. When you run out, you can wait for the next month or upgrade to Pro.",
   },
   {
     q: "Is there a free trial of Pro?",
-    a: "The Free plan is permanent, not a trial — you can use the Employability Score, job match scoring and the ATS checker indefinitely without paying. Pro removes the caps on resume generations and mock interviews and unlocks the Career Planner.",
+    a: "The Free plan is permanent rather than a trial. You can use the Employability Score, job match scoring and the ATS checker indefinitely without paying. Pro removes the caps on resume generations and mock interviews and unlocks the Career Planner.",
   },
   {
     q: "How does billing work?",
-    a: "Pro is ₹299 per month. Billing details will be confirmed when we open the beta to paid plans — waitlist members will be told before anything is charged.",
+    a: "Pro is ₹299 per month. Billing details will be confirmed when we open the beta to paid plans, and waitlist members will be told before anything is charged.",
   },
   {
     q: "Can I cancel anytime?",
@@ -47,7 +47,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "When does the beta open?",
-    a: "GetHyre is in private beta and invites go out in small batches. Join the waitlist and we'll email you when your seat is ready — we'd rather onboard slowly than ship something half-working.",
+    a: "GetHyre is in private beta and invites go out in small batches. Join the waitlist and we'll email you when your seat is ready. We'd rather onboard slowly than ship something half-working.",
   },
 ];
 

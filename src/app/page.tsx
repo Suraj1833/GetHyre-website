@@ -28,7 +28,7 @@ const steps = [
   },
   {
     title: "Get your Employability Score",
-    body: "One number out of 100, broken into Resume, Profile, Skills, Courses, Jobs and Interview — so you know exactly what's weak.",
+    body: "One number out of 100, broken into Resume, Profile, Skills, Courses, Jobs and Interview, so you know exactly what's weak.",
   },
   {
     title: "Fix the weak parts",
@@ -42,13 +42,50 @@ const steps = [
 
 const features = [
   {
+    href: "/career-plan",
+    label: "Career Plan",
+    title: "A week-by-week plan built around your gaps",
+    body: "Set your target role, timeline and current level. AI builds a plan across skills, resume and interview prep, informed by a skill gap table that shows required versus current level for every skill.",
+    points: [
+      "Timelines from 2 months to a year",
+      "Skill gaps tagged High, Medium or Low",
+      "Recommended courses mapped to the gaps that matter",
+    ],
+    visual: (
+      <div className="space-y-5">
+        <BrowserFrame label="gethyre.ai/career-plan">
+          <CareerPlanCard />
+        </BrowserFrame>
+        <div className="rounded-2xl border border-zinc-200 shadow-[0_20px_45px_-30px_rgba(11,11,18,0.5)]">
+          <SkillGapTable />
+        </div>
+      </div>
+    ),
+  },
+  {
+    href: "/mock-interviews",
+    label: "AI Mock Interviews",
+    title: "Practise the interview before it costs you the offer",
+    body: "Role-specific questions, answered by text or recording. You get an overall score plus a breakdown across Communication, Content, Confidence, Clarity and Relevance, with transcripts for every answer.",
+    points: [
+      "Text or recorded practice rounds",
+      "Strengths and Improve summary after every session",
+      "Question-by-question scores with full transcripts",
+    ],
+    visual: (
+      <BrowserFrame>
+        <InterviewResultsCard />
+      </BrowserFrame>
+    ),
+  },
+  {
     href: "/resume-optimizer",
     label: "Resume Optimizer",
     title: "An ATS score, and the exact fixes to raise it",
-    body: "See how your resume scores on Keywords, Formatting, Length, Skills Match and Contact Info — each flagged Good, Needs Work or Missing. AI rewrites content against any job description, and you keep or skip every single edit.",
+    body: "See how your resume scores on Keywords, Formatting, Length, Skills Match and Contact Info, each flagged Good, Needs Work or Missing. AI rewrites content against any job description, and you keep or skip every single edit.",
     points: [
       "Resume Match % against any job description",
-      "Keep or skip each AI suggestion — never a silent overwrite",
+      "Keep or skip each AI suggestion, never a silent overwrite",
       "Full version history of every resume",
     ],
     visual: (
@@ -76,43 +113,6 @@ const features = [
       <PhoneFrame>
         <JobMatchList />
       </PhoneFrame>
-    ),
-  },
-  {
-    href: "/mock-interviews",
-    label: "AI Mock Interviews",
-    title: "Practise the interview before it costs you the offer",
-    body: "Role-specific questions, answered by text or recording. You get an overall score plus a breakdown across Communication, Content, Confidence, Clarity and Relevance — with transcripts for every answer.",
-    points: [
-      "Text or recorded practice rounds",
-      "Strengths and Improve summary after every session",
-      "Question-by-question scores with full transcripts",
-    ],
-    visual: (
-      <BrowserFrame>
-        <InterviewResultsCard />
-      </BrowserFrame>
-    ),
-  },
-  {
-    href: "/career-plan",
-    label: "Career Plan",
-    title: "A week-by-week plan built around your gaps",
-    body: "Set your target role, timeline and current level. AI builds a plan across skills, resume and interview prep — informed by a skill gap table that shows required versus current level for every skill.",
-    points: [
-      "Timelines from 2 months to a year",
-      "Skill gaps tagged High, Medium or Low",
-      "Recommended courses mapped to the gaps that matter",
-    ],
-    visual: (
-      <div className="space-y-5">
-        <BrowserFrame label="app.gethyre.ai/career-plan">
-          <CareerPlanCard />
-        </BrowserFrame>
-        <div className="rounded-2xl border border-zinc-200 shadow-[0_20px_45px_-30px_rgba(11,11,18,0.5)]">
-          <SkillGapTable />
-        </div>
-      </div>
     ),
   },
 ];
@@ -181,7 +181,7 @@ export default function Home() {
         <Container>
           <Reveal>
             <p className="text-center text-sm font-semibold uppercase tracking-wider text-zinc-400">
-              Four tools, one score
+              Everything between you and the offer
             </p>
           </Reveal>
           <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -309,7 +309,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Pricing"
               title="Start free. Upgrade only if you're in the thick of it."
-              body="No hidden usage limits. A visible meter always shows what's left before you run out — nothing is silently deducted."
+              body="No hidden usage limits. A visible meter always shows what's left before you run out, so nothing is silently deducted."
             />
           </Reveal>
 

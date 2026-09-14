@@ -5,10 +5,10 @@ import clsx from "clsx";
 import { AiTag, StatusPill } from "@/components/ui/Bits";
 
 const weeks = [
-  { week: "Week 1", focus: "SQL foundations — joins, aggregates", done: true },
+  { week: "Week 1", focus: "SQL foundations: joins, aggregates", done: true },
   { week: "Week 2", focus: "Rebuild resume around analytics keywords", done: true },
   { week: "Week 3", focus: "Tableau dashboard project", done: false },
-  { week: "Week 4", focus: "Mock interview — behavioural round", done: false },
+  { week: "Week 4", focus: "Mock interview: behavioural round", done: false },
 ];
 
 export function CareerPlanCard() {
@@ -129,7 +129,7 @@ export function SkillGapTable() {
           Recommended next
         </p>
         <p className="mt-1 text-[11px] leading-relaxed text-ink-muted">
-          Start with SQL — it carries the highest gap and appears in 9 of your 10 saved jobs.
+          Start with SQL. It carries the highest gap and appears in 9 of your 10 saved jobs.
         </p>
       </div>
     </div>

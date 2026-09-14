@@ -23,7 +23,7 @@ export function PhoneFrame({
 export function BrowserFrame({
   children,
   className,
-  label = "app.gethyre.ai",
+  label = "gethyre.ai",
 }: {
   children: React.ReactNode;
   className?: string;

@@ -85,7 +85,7 @@ export default function WaitlistPage() {
             <div className="mx-auto max-w-sm lg:sticky lg:top-24">
               <EmployabilityScoreCard />
               <p className="mt-5 text-center text-sm leading-relaxed text-ink-muted">
-                This is the first thing you&apos;ll see after onboarding — your
+                This is the first thing you&apos;ll see after onboarding: your
                 readiness, scored and broken down.
               </p>
             </div>

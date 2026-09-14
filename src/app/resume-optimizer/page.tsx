@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Resume Optimizer",
   description:
-    "Get an ATS score out of 100 broken down by keywords, formatting, length, skills match and contact info — plus AI rewrites you approve edit by edit.",
+    "Get an ATS score out of 100 broken down by keywords, formatting, length, skills match and contact info, plus AI rewrites you approve edit by edit.",
 };
 
 export default function ResumeOptimizerPage() {
@@ -29,7 +29,7 @@ export default function ResumeOptimizerPage() {
             <span className="brand-gradient-text">an ATS reads it.</span>
           </>
         }
-        body="Upload a resume or build one from scratch. GetHyre scores it out of 100, flags exactly which sections are weak, and rewrites the content against the job you're actually applying to."
+        body="Upload your resume and GetHyre scores it out of 100, flags exactly which sections are weak and rewrites the content against the job you're actually applying to."
         visual={
           <div className="relative">
             <BrowserFrame>
@@ -45,7 +45,7 @@ export default function ResumeOptimizerPage() {
       <BenefitGrid
         eyebrow="ATS Score"
         title="Five checks that decide whether a human ever sees your resume"
-        body="Each one is flagged Good, Needs Work or Missing — with a plain-English fix list, not a vague grade."
+        body="Each one is flagged Good, Needs Work or Missing, with a plain-English fix list rather than a vague grade."
         benefits={[
           {
             title: "Keywords",
@@ -56,8 +56,12 @@ export default function ResumeOptimizerPage() {
             body: "Catch the layout choices that break automated parsers before they cost you a shortlist.",
           },
           {
-            title: "Length & Skills Match",
-            body: "Check whether your length suits your experience and which required skills aren't showing up.",
+            title: "Length",
+            body: "Check whether your resume runs to the right length for how much experience you actually have.",
+          },
+          {
+            title: "Skills Match",
+            body: "See which skills the role requires that your resume never mentions.",
           },
           {
             title: "Contact Info",
@@ -69,9 +73,9 @@ export default function ResumeOptimizerPage() {
       <SplitBlock
         eyebrow="AI Rewriting"
         title="AI suggests. You decide. Nothing is overwritten."
-        body="GetHyre rewrites bullet points to match the job description — turning vague duties into specific, measurable achievements. Every suggestion appears side by side with your original, and you keep or skip each one individually."
+        body="GetHyre rewrites bullet points to match the job description, turning vague duties into specific, measurable achievements. Every suggestion appears side by side with your original, and you keep or skip each one individually."
         points={[
-          "Keep or skip each edit — never a silent overwrite",
+          "Keep or skip each edit, never a silent overwrite",
           "Rewrites target the exact job description you paste in",
           "Full version history, so you can always go back",
         ]}
@@ -88,7 +92,7 @@ export default function ResumeOptimizerPage() {
       <SplitBlock
         eyebrow="Resume Match %"
         title="A match score for every job you apply to"
-        body="Paste a job description and get a Resume Match % showing how closely your resume lines up before you hit submit — then fix the gap while it still matters."
+        body="Paste a job description and get a Resume Match % showing how closely your resume lines up before you hit submit, then fix the gap while it still matters."
         reverse
         points={[
           "Compare one resume against many job descriptions",
@@ -96,7 +100,7 @@ export default function ResumeOptimizerPage() {
           "Keep a separate tailored version per application",
         ]}
         visual={
-          <BrowserFrame label="app.gethyre.ai/resume">
+          <BrowserFrame label="gethyre.ai/resume">
             <AtsScoreCard />
           </BrowserFrame>
         }

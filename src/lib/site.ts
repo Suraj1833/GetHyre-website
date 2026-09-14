@@ -1,6 +1,24 @@
-export const APP_URL = "https://app.gethyre.ai";
+// Store search URLs, so the links resolve before the listings are live.
+// Swap each for the direct listing URL once the apps are published.
+export const PLAY_STORE_URL = "https://play.google.com/store/search?q=GetHyre&c=apps";
+export const APP_STORE_URL = "https://apps.apple.com/search?term=GetHyre";
+
+export function resolveStoreUrl(userAgent: string) {
+  if (/iPhone|iPad|iPod|Macintosh/i.test(userAgent)) return APP_STORE_URL;
+  return PLAY_STORE_URL;
+}
 
 export const productLinks = [
+  {
+    href: "/career-plan",
+    label: "Career Plan",
+    blurb: "A week-by-week plan built from your target role and your real skill gaps.",
+  },
+  {
+    href: "/mock-interviews",
+    label: "AI Mock Interviews",
+    blurb: "Role-specific practice with scoring across communication, content and clarity.",
+  },
   {
     href: "/resume-optimizer",
     label: "Resume Optimizer",
@@ -10,16 +28,6 @@ export const productLinks = [
     href: "/job-match",
     label: "Job Match",
     blurb: "A jobs feed where every listing carries an AI match score for your profile.",
-  },
-  {
-    href: "/mock-interviews",
-    label: "AI Mock Interviews",
-    blurb: "Role-specific practice with scoring across communication, content and clarity.",
-  },
-  {
-    href: "/career-plan",
-    label: "Career Plan",
-    blurb: "A week-by-week plan built from your target role and your real skill gaps.",
   },
 ];
 
@@ -67,7 +75,7 @@ export const plans = {
       "3 AI mock interviews per month",
       "Job match scoring",
       "Employability Score with full breakdown",
-      "Visible usage meter — always know what's left",
+      "Visible usage meter, so you always know what's left",
     ],
   },
   pro: {

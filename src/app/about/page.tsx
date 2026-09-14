@@ -7,7 +7,7 @@ import { WaitlistCta } from "@/components/sections/WaitlistCta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why we're building GetHyre — AI career preparation for students and early-career job seekers in India. Currently in private beta.",
+    "Why we're building GetHyre: AI career preparation for students and early-career job seekers in India. Currently in private beta.",
 };
 
 const principles = [
@@ -96,9 +96,9 @@ export default function AboutPage() {
               <p className="mt-3 text-sm leading-relaxed text-ink-muted">
                 GetHyre is in private beta. We have no user counts, testimonials
                 or company logos to show you, because we haven&apos;t earned
-                them yet — and we&apos;d rather say that than invent them. If
-                you want to be one of the first people to use it, the waitlist
-                is open.
+                them yet, and we&apos;d rather say that than invent them. If you
+                want to be one of the first people to use it, the waitlist is
+                open.
               </p>
             </div>
           </Reveal>

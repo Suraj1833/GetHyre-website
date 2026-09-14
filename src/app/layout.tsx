@@ -18,13 +18,13 @@ const body = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gethyre.ai"),
   title: {
-    default: "GetHyre.ai — AI career prep for students in India",
+    default: "GetHyre.ai: AI career prep for students in India",
     template: "%s · GetHyre.ai",
   },
   description:
     "Know exactly how employable you are, then fix it. AI resume optimisation, job match scoring, mock interviews and a week-by-week career plan. Private beta.",
   openGraph: {
-    title: "GetHyre.ai — AI career prep for students in India",
+    title: "GetHyre.ai: AI career prep for students in India",
     description:
       "Your Employability Score, AI resume optimisation, job match scoring and mock interviews in one place. Private beta.",
     type: "website",
