@@ -5,18 +5,33 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, BetaBadge, StatusPill } from "@/components/ui/Bits";
 import { Accordion, type FaqItem } from "@/components/ui/Accordion";
 import { WaitlistCta } from "@/components/sections/WaitlistCta";
-import { plans } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "GetHyre is free to start, with 5 resume generations, 3 mock interviews, job match scoring and your Employability Score. Pro is ₹299/month for unlimited use.",
+    "GetHyre is free to start, with your Employability Score, job match scoring and basic ATS scoring. GetHyre+ adds extended resume optimisations, mock interviews and full Career Plan access.",
 };
+
+const freeFeatures = [
+  "Employability Score",
+  "Job match scoring",
+  "Basic ATS scoring and fixes",
+  "Limited resume optimisations",
+  "Limited mock interviews",
+];
+
+const proFeatures = [
+  "1,000 monthly credits",
+  "Extended mock interviews",
+  "Extended resume optimisations",
+  "Advanced AI skill insights",
+  "Full access to Career Plan",
+];
 
 const comparison = [
   { feature: "Employability Score", free: "Included", pro: "Included" },
-  { feature: "Resume generations", free: "5 / month", pro: "Unlimited" },
-  { feature: "AI mock interviews", free: "3 / month", pro: "Unlimited" },
+  { feature: "Resume optimisations", free: "Limited", pro: "Extended" },
+  { feature: "AI mock interviews", free: "Limited", pro: "Extended" },
   { feature: "Job match scoring", free: "Included", pro: "Included" },
   { feature: "ATS score & fix list", free: "Included", pro: "Included" },
   { feature: "Advanced AI skill insights", free: "Not included", pro: "Included" },
@@ -72,62 +87,67 @@ export default function PricingPage() {
 
           <div className="mx-auto mt-14 grid max-w-4xl gap-5 md:grid-cols-2">
             <Reveal>
-              <div className="h-full rounded-3xl border border-zinc-200 bg-white p-8">
-                <p className="font-display text-xl font-bold text-ink">{plans.free.name}</p>
-                <p className="mt-1.5 text-sm text-ink-muted">{plans.free.tagline}</p>
-                <p className="mt-6 font-display text-5xl font-extrabold text-ink">
-                  {plans.free.price}
-                  <span className="text-base font-semibold text-zinc-400">
-                    {plans.free.cadence}
-                  </span>
+              <div className="flex h-full flex-col rounded-3xl border border-zinc-200 bg-white p-8">
+                <p className="font-display text-3xl font-extrabold tracking-tight text-ink">
+                  GetHyre
                 </p>
+                <p className="mt-1.5 text-sm text-ink-muted">Find out where you stand</p>
                 <ul className="mt-7 space-y-3.5">
-                  {plans.free.features.map((item) => (
+                  {freeFeatures.map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-ink-muted">
                       <span className="mt-0.5 shrink-0 text-good">✓</span>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Button href="/waitlist" variant="secondary" size="lg" className="mt-8 w-full">
-                  Join the waitlist
-                </Button>
+                <div className="mt-auto pt-10">
+                  <p className="font-display text-5xl font-extrabold text-ink">Free</p>
+                  <p className="mt-1 text-sm text-ink-muted">Forever</p>
+                  <Button href="/waitlist" variant="secondary" size="lg" className="mt-6 w-full">
+                    Join the waitlist
+                  </Button>
+                </div>
               </div>
             </Reveal>
 
             <Reveal delay={0.08}>
               <div className="brand-gradient relative h-full overflow-hidden rounded-3xl p-8 text-white">
                 <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-                <div className="relative">
+                <div className="relative flex h-full flex-col">
                   <div className="flex items-center justify-between gap-3">
-                    <p className="font-display text-xl font-bold">{plans.pro.name}</p>
+                    <p className="font-display text-3xl font-extrabold tracking-tight">
+                      GetHyre+
+                    </p>
                     <span className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wide">
                       Most useful
                     </span>
                   </div>
-                  <p className="mt-1.5 text-sm text-white/75">{plans.pro.tagline}</p>
-                  <p className="mt-6 font-display text-5xl font-extrabold">
-                    {plans.pro.price}
-                    <span className="text-base font-semibold text-white/60">
-                      {plans.pro.cadence}
-                    </span>
-                  </p>
+                  <p className="mt-1.5 text-sm text-white/75">For an active job hunt</p>
                   <ul className="mt-7 space-y-3.5">
-                    {plans.pro.features.map((item) => (
+                    {proFeatures.map((item) => (
                       <li key={item} className="flex gap-3 text-sm text-white/85">
                         <span className="mt-0.5 shrink-0">✓</span>
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    href="/waitlist"
-                    variant="inverse"
-                    size="lg"
-                    className="mt-8 w-full"
-                  >
-                    Join the waitlist
-                  </Button>
+                  <div className="mt-auto pt-10">
+                    <p className="font-display text-5xl font-extrabold">
+                      $10
+                      <span className="text-base font-semibold text-white/60"> /month</span>
+                    </p>
+                    <p className="mt-1 text-sm text-white/60">
+                      Billed monthly, or pay yearly and save 30%
+                    </p>
+                    <Button
+                      href="/waitlist"
+                      variant="inverse"
+                      size="lg"
+                      className="mt-6 w-full"
+                    >
+                      Join the waitlist
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Reveal>
