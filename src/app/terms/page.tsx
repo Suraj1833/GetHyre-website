@@ -37,7 +37,7 @@ const sections: LegalSection[] = [
   },
   {
     heading: "Subscriptions and payment",
-    body: "Placeholder. Set out Free and Pro plan terms, the ₹299/month Pro price, billing cycle, cancellation, and refund policy.",
+    body: "Placeholder. Set out Free and GetHyre+ plan terms, the $10/month USD price and yearly option, billing cycle, cancellation, and refund policy.",
   },
   {
     heading: "Termination",

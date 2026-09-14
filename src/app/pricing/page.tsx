@@ -5,28 +5,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading, BetaBadge, StatusPill } from "@/components/ui/Bits";
 import { Accordion, type FaqItem } from "@/components/ui/Accordion";
 import { WaitlistCta } from "@/components/sections/WaitlistCta";
+import { plans } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pricing",
   description:
     "GetHyre is free to start, with your Employability Score, job match scoring and basic ATS scoring. GetHyre+ adds extended resume optimisations, mock interviews and full Career Plan access.",
 };
-
-const freeFeatures = [
-  "Employability Score",
-  "Job match scoring",
-  "Basic ATS scoring and fixes",
-  "Limited resume optimisations",
-  "Limited mock interviews",
-];
-
-const proFeatures = [
-  "1,000 monthly credits",
-  "Extended mock interviews",
-  "Extended resume optimisations",
-  "Advanced AI skill insights",
-  "Full access to Career Plan",
-];
 
 const comparison = [
   { feature: "Employability Score", free: "Included", pro: "Included" },
@@ -42,19 +27,19 @@ const comparison = [
 const faqs: FaqItem[] = [
   {
     q: "What happens when I hit a limit on the Free plan?",
-    a: "You'll see it coming. A usage meter shows how many resume generations and mock interviews you have left at all times, so nothing is silently deducted and you're never cut off mid-task without warning. When you run out, you can wait for the next month or upgrade to Pro.",
+    a: "You'll see it coming. A usage meter shows how many resume generations and mock interviews you have left at all times, so nothing is silently deducted and you're never cut off mid-task without warning. When you run out, you can wait for the next month or upgrade to GetHyre+.",
   },
   {
-    q: "Is there a free trial of Pro?",
-    a: "The Free plan is permanent rather than a trial. You can use the Employability Score, job match scoring and the ATS checker indefinitely without paying. Pro removes the caps on resume generations and mock interviews and unlocks the Career Planner.",
+    q: "Is there a free trial of GetHyre+?",
+    a: "The Free plan is permanent rather than a trial. You can use the Employability Score, job match scoring and the ATS checker indefinitely without paying. GetHyre+ raises the caps on resume optimisations and mock interviews and unlocks the Career Plan.",
   },
   {
     q: "How does billing work?",
-    a: "Pro is ₹299 per month. Billing details will be confirmed when we open the beta to paid plans, and waitlist members will be told before anything is charged.",
+    a: "GetHyre+ is $10 per month, billed in USD. You can also pay yearly and save 30%. Billing details will be confirmed when we open the beta to paid plans, and waitlist members will be told before anything is charged.",
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. Pro is month to month with no lock-in, and cancelling drops you back to the Free plan rather than deleting your account or your saved resumes.",
+    a: "Yes. GetHyre+ is month to month with no lock-in, and cancelling drops you back to the Free plan rather than deleting your account or your saved resumes.",
   },
   {
     q: "Do I need a credit card to join?",
@@ -93,7 +78,7 @@ export default function PricingPage() {
                 </p>
                 <p className="mt-1.5 text-sm text-ink-muted">Find out where you stand</p>
                 <ul className="mt-7 space-y-3.5">
-                  {freeFeatures.map((item) => (
+                  {plans.free.features.map((item) => (
                     <li key={item} className="flex gap-3 text-sm text-ink-muted">
                       <span className="mt-0.5 shrink-0 text-good">✓</span>
                       {item}
@@ -124,7 +109,7 @@ export default function PricingPage() {
                   </div>
                   <p className="mt-1.5 text-sm text-white/75">For an active job hunt</p>
                   <ul className="mt-7 space-y-3.5">
-                    {proFeatures.map((item) => (
+                    {plans.pro.features.map((item) => (
                       <li key={item} className="flex gap-3 text-sm text-white/85">
                         <span className="mt-0.5 shrink-0">✓</span>
                         {item}
@@ -173,7 +158,7 @@ export default function PricingPage() {
                       Free
                     </th>
                     <th className="pb-4 text-center text-xs font-bold uppercase tracking-wide text-brand-600">
-                      Pro
+                      GetHyre+
                     </th>
                   </tr>
                 </thead>
