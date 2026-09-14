@@ -17,7 +17,7 @@ import {
 } from "@/components/mockups/ResumeAts";
 import { JobMatchList } from "@/components/mockups/JobMatchList";
 import { InterviewResultsCard } from "@/components/mockups/InterviewResults";
-import { CareerPlanCard, SkillGapTable } from "@/components/mockups/CareerPlan";
+import { CareerPlanCard } from "@/components/mockups/CareerPlan";
 import { WaitlistCta } from "@/components/sections/WaitlistCta";
 import { plans, productLinks } from "@/lib/site";
 
@@ -52,14 +52,9 @@ const features = [
       "Recommended courses mapped to the gaps that matter",
     ],
     visual: (
-      <div className="space-y-5">
-        <BrowserFrame label="gethyre.ai/career-plan">
-          <CareerPlanCard />
-        </BrowserFrame>
-        <div className="rounded-2xl border border-zinc-200 shadow-[0_20px_45px_-30px_rgba(11,11,18,0.5)]">
-          <SkillGapTable />
-        </div>
-      </div>
+      <BrowserFrame label="gethyre.ai/career-plan">
+        <CareerPlanCard />
+      </BrowserFrame>
     ),
   },
   {
