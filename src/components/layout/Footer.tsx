@@ -5,9 +5,13 @@ import { BetaBadge } from "@/components/ui/Bits";
 import { footerColumns } from "@/lib/site";
 
 const socials = [
-  { label: "LinkedIn", href: "#" },
-  { label: "X", href: "#" },
-  { label: "Instagram", href: "#" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/gethyre-ai/",
+    external: true,
+  },
+  { label: "X", href: "#", external: false },
+  { label: "Instagram", href: "#", external: false },
 ];
 
 export function Footer() {
@@ -56,6 +60,7 @@ export function Footer() {
                 href={social.href}
                 className="text-xs text-ink-muted transition-colors hover:text-brand-600"
                 rel="noopener noreferrer"
+                {...(social.external ? { target: "_blank" } : {})}
               >
                 {social.label}
               </a>

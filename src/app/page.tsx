@@ -119,9 +119,9 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.05}>
                 <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] text-ink sm:text-5xl md:text-6xl">
-                  Know how employable{" "}
-                  <span className="brand-gradient-text">you actually are.</span>{" "}
-                  Then fix it.
+                  Know your{" "}
+                  <span className="brand-gradient-text">job readiness score.</span>{" "}
+                  Know exactly what to fix.
                 </h1>
               </Reveal>
               <Reveal delay={0.1}>
