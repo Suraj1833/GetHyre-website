@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/Bits";
 import { PhoneFrame, BrowserFrame } from "@/components/ui/DeviceFrame";
 import { EmployabilityScoreCard } from "@/components/mockups/EmployabilityScore";
+import { AppHome } from "@/components/mockups/AppHome";
 import {
   AtsScoreCard,
   SuggestedEditCard,
@@ -40,7 +41,29 @@ const steps = [
   },
 ];
 
-const features = [
+const features: {
+  href?: string;
+  label: string;
+  title: string;
+  body: string;
+  points: string[];
+  visual: React.ReactNode;
+}[] = [
+  {
+    label: "Employability Score",
+    title: "One score that says where you stand",
+    body: "Your job readiness out of 100, broken into Resume, Profile, Skills, Courses, Jobs and Interview. It updates as you work, so you can see which part is holding you back instead of guessing.",
+    points: [
+      "Six sub-scores, so weak spots are obvious",
+      "Moves as you fix your resume, skills and interviews",
+      "The anchor of your home screen in the app",
+    ],
+    visual: (
+      <div className="mx-auto max-w-sm">
+        <EmployabilityScoreCard />
+      </div>
+    ),
+  },
   {
     href: "/career-plan",
     label: "Career Plan",
@@ -127,19 +150,15 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.05}>
                 <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] text-ink sm:text-5xl md:text-6xl">
-                  Know your{" "}
-                  <span className="brand-gradient-text">job readiness score.</span>{" "}
-                  Know exactly what to fix.
+                  One app for your{" "}
+                  <span className="brand-gradient-text">entire job hunt.</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mt-6 max-w-xl text-lg leading-8 text-ink-muted">
-                  GetHyre scores your job readiness out of 100, and shows you
-                  exactly which part is holding you back. One dashboard tracks
-                  it all, job matches with your resume tailored to every JD,
-                  your ATS score, the skill gaps to close before you apply, mock
-                  interviews to walk in ready, and a career plan if you&apos;re
-                  starting from scratch
+                  Fix your resume, practise the interview, close your skill gaps
+                  and apply only where you actually fit. Built for students and
+                  early-career job seekers in India.
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
@@ -161,9 +180,9 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <div className="relative">
-                <div className="mx-auto max-w-sm">
-                  <EmployabilityScoreCard />
-                </div>
+                <PhoneFrame>
+                  <AppHome />
+                </PhoneFrame>
               </div>
             </Reveal>
           </div>
@@ -219,7 +238,7 @@ export default function Home() {
       {/* Feature deep dives */}
       {features.map((feature, i) => (
         <section
-          key={feature.href}
+          key={feature.label}
           className="border-b border-zinc-100 py-20 sm:py-24">
           <Container>
             <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
@@ -249,12 +268,14 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  href={feature.href}
-                  variant="secondary"
-                  className="mt-8">
-                  More on {feature.label}
-                </Button>
+                {feature.href ? (
+                  <Button
+                    href={feature.href}
+                    variant="secondary"
+                    className="mt-8">
+                    More on {feature.label}
+                  </Button>
+                ) : null}
               </Reveal>
 
               <Reveal
