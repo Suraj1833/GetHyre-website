@@ -38,7 +38,9 @@ export function AppHome() {
         <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/15 blur-2xl" />
         <div className="relative">
           <div className="flex items-start justify-between gap-3">
-            <p className="text-[11px] font-medium text-white/80">Job readiness</p>
+            <p className="text-[11px] font-medium text-white/80">
+              Your Employability Score
+            </p>
             <span className="rounded-full bg-white/20 px-2 py-0.5 text-[9px] font-bold">
               +6 this week
             </span>
@@ -65,7 +67,7 @@ export function AppHome() {
       </motion.div>
 
       <div className="mt-4 flex items-center gap-2">
-        <p className="text-[11px] font-bold text-ink">Today</p>
+        <p className="text-[11px] font-bold text-ink">Quick Actions</p>
         <AiTag />
       </div>
 

@@ -29,7 +29,7 @@ const steps = [
   },
   {
     title: "Get your Employability Score",
-    body: "One number out of 100, broken into Resume, Profile, Skills, Courses, Jobs and Interview, so you know exactly what's weak.",
+    body: "One number out of 100, with a breakdown underneath it, so you know exactly which part is weak.",
   },
   {
     title: "Fix the weak parts",
@@ -52,9 +52,9 @@ const features: {
   {
     label: "Employability Score",
     title: "One score that says where you stand",
-    body: "Your job readiness out of 100, broken into Resume, Profile, Skills, Courses, Jobs and Interview. It updates as you work, so you can see which part is holding you back instead of guessing.",
+    body: "Your job readiness scored out of 100, with a breakdown underneath showing which part of your profile is pulling the number down. It updates as you work, so progress is something you can watch rather than guess at.",
     points: [
-      "Six sub-scores, so weak spots are obvious",
+      "A breakdown that makes weak spots obvious",
       "Moves as you fix your resume, skills and interviews",
       "The anchor of your home screen in the app",
     ],
