@@ -60,7 +60,7 @@ export const scoreBreakdown = [
   { label: "Profile", value: 84 },
   { label: "Skills", value: 65 },
   { label: "Courses", value: 59 },
-  { label: "Jobs", value: 71 },
+  { label: "Role fit", value: 71 },
   { label: "Interview", value: 74 },
 ];
 
