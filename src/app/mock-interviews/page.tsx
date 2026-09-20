@@ -75,14 +75,9 @@ export default function MockInterviewsPage() {
           "Transcripts saved for every answer",
         ]}
         visual={
-          <div className="flex flex-col items-center gap-6">
-            <div className="w-full max-w-sm">
-              <QuestionBreakdown />
-            </div>
-            <BrowserFrame className="w-full">
-              <InterviewResultsCard />
-            </BrowserFrame>
-          </div>
+          <BrowserFrame className="w-full">
+            <InterviewResultsCard />
+          </BrowserFrame>
         }
       />
 

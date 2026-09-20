@@ -118,11 +118,11 @@ const features: {
       "Full version history of every resume",
     ],
     visual: (
-      <div className="relative">
-        <BrowserFrame>
+      <div className="flex flex-col items-center gap-6">
+        <BrowserFrame className="w-full">
           <AtsScoreCard />
         </BrowserFrame>
-        <div className="absolute -bottom-8 -right-2 w-56 sm:-right-8 sm:w-64">
+        <div className="w-full max-w-sm">
           <SuggestedEditCard />
         </div>
       </div>

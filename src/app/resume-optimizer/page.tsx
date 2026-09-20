@@ -31,11 +31,11 @@ export default function ResumeOptimizerPage() {
         }
         body="Upload your resume and GetHyre scores it out of 100, flags exactly which sections are weak and rewrites the content against the job you're actually applying to."
         visual={
-          <div className="relative">
-            <BrowserFrame>
+          <div className="flex flex-col items-center gap-6">
+            <BrowserFrame className="w-full">
               <AtsScoreCard />
             </BrowserFrame>
-            <div className="absolute -bottom-10 -right-2 w-56 sm:-right-10 sm:w-64">
+            <div className="w-full max-w-sm">
               <SuggestedEditCard />
             </div>
           </div>
