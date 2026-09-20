@@ -30,11 +30,11 @@ export default function MockInterviewsPage() {
         }
         body="Most students walk into their first interview having never said their answers out loud. Practise with role-specific questions, by text or recording, and get scored feedback on what actually went wrong."
         visual={
-          <div className="relative">
-            <BrowserFrame label="gethyre.ai/interviews">
+          <div className="flex flex-col items-center gap-6">
+            <BrowserFrame label="gethyre.ai/interviews" className="w-full">
               <InterviewResultsCard />
             </BrowserFrame>
-            <div className="absolute -bottom-10 -right-2 w-56 sm:-right-8 sm:w-64">
+            <div className="w-full max-w-sm">
               <QuestionBreakdown />
             </div>
           </div>
