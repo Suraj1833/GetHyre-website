@@ -7,7 +7,6 @@ import {
 } from "@/components/sections/FeaturePage";
 import { PhoneFrame, BrowserFrame } from "@/components/ui/DeviceFrame";
 import { JobMatchList } from "@/components/mockups/JobMatchList";
-import { MatchScoreChip } from "@/components/mockups/ResumeAts";
 
 export const metadata: Metadata = {
   title: "Job Match",
@@ -28,14 +27,9 @@ export default function JobMatchPage() {
         }
         body="Applying to 200 jobs and hearing nothing back isn't a strategy. GetHyre scores each listing against your profile so you can tell a real fit from a long shot before you spend an evening on the application."
         visual={
-          <div className="relative">
-            <PhoneFrame>
-              <JobMatchList />
-            </PhoneFrame>
-            <div className="absolute -bottom-6 left-0 hidden sm:block">
-              <MatchScoreChip />
-            </div>
-          </div>
+          <PhoneFrame>
+            <JobMatchList />
+          </PhoneFrame>
         }
       />
 
