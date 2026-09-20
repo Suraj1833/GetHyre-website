@@ -8,8 +8,13 @@ const SCORE = 72;
 
 const today = [
   { title: "Tailor your resume to a JD", meta: "Raises your match score" },
-  { title: "Practise 3 interview questions", meta: "About 12 minutes" },
-  { title: "Close your SQL gap", meta: "Highest gap for your role" },
+  { title: "Practise AI mock interviews", meta: "Get scored on every answer" },
+  { title: "Explore Jobs", meta: "See your match score on every listing" },
+];
+
+const stats = [
+  { label: "Job Match", value: "91%", meta: "Best match for your profile" },
+  { label: "Applications", value: "12", meta: "Sent this month" },
 ];
 
 export function AppHome() {
@@ -65,6 +70,29 @@ export function AppHome() {
           </p>
         </div>
       </motion.div>
+
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        {stats.map((stat, i) => (
+          <motion.div
+            key={stat.label}
+            className="rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2.5"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35, delay: 0.3 + i * 0.09 }}
+          >
+            <p className="truncate text-[10px] font-medium text-ink-muted">
+              {stat.label}
+            </p>
+            <p className="mt-0.5 font-display text-lg font-extrabold leading-none text-ink">
+              {stat.value}
+            </p>
+            <p className="mt-1 text-[10px] leading-tight text-ink-muted">
+              {stat.meta}
+            </p>
+          </motion.div>
+        ))}
+      </div>
 
       <div className="mt-4 flex items-center gap-2">
         <p className="text-[11px] font-bold text-ink">Quick Actions</p>
