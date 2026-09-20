@@ -9,7 +9,6 @@ import { BrowserFrame } from "@/components/ui/DeviceFrame";
 import {
   AtsScoreCard,
   SuggestedEditCard,
-  MatchScoreChip,
 } from "@/components/mockups/ResumeAts";
 
 export const metadata: Metadata = {
@@ -80,11 +79,8 @@ export default function ResumeOptimizerPage() {
           "Full version history, so you can always go back",
         ]}
         visual={
-          <div className="flex flex-col items-center gap-6">
-            <div className="w-full max-w-sm">
-              <SuggestedEditCard />
-            </div>
-            <MatchScoreChip />
+          <div className="mx-auto w-full max-w-sm">
+            <SuggestedEditCard />
           </div>
         }
       />
