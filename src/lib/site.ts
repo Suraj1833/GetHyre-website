@@ -51,6 +51,7 @@ export const footerColumns = [
     links: [
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms & Conditions" },
+      { href: "/delete-account", label: "Delete Account" },
     ],
   },
 ];
