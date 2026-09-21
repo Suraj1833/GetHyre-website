@@ -3,18 +3,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import clsx from "clsx";
+import { submitWaitlist, type WaitlistSource } from "@/lib/waitlist";
 
 type State = "idle" | "loading" | "done" | "error";
 
 export function WaitlistForm({
   variant = "light",
   showGoal = false,
+  source = "inline-cta",
 }: {
   variant?: "light" | "dark";
   showGoal?: boolean;
+  source?: WaitlistSource;
 }) {
   const [email, setEmail] = useState("");
   const [goal, setGoal] = useState("");
+  const [botField, setBotField] = useState("");
   const [state, setState] = useState<State>("idle");
   const [message, setMessage] = useState("");
 
@@ -28,14 +32,15 @@ export function WaitlistForm({
       return;
     }
 
+    // Honeypot: only bots fill this, so show the success state and send nothing.
+    if (botField) {
+      setState("done");
+      return;
+    }
+
     setState("loading");
     try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, goal }),
-      });
-      if (!res.ok) throw new Error("Request failed");
+      await submitWaitlist({ email, targetRole: goal, source });
       setState("done");
     } catch {
       setState("error");
@@ -81,6 +86,16 @@ export function WaitlistForm({
             exit={{ opacity: 0 }}
             className="flex flex-col gap-3"
             noValidate>
+            <input
+              type="text"
+              name="botcheck"
+              value={botField}
+              onChange={(e) => setBotField(e.target.value)}
+              className="absolute left-[-9999px] top-0 h-0 w-0 opacity-0"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden
+            />
             {showGoal ? (
               <div>
                 <label

@@ -51,7 +51,7 @@ export default function WaitlistPage() {
 
             <Reveal delay={0.15}>
               <div className="mt-9 rounded-3xl border border-zinc-200 bg-white p-6 shadow-[0_25px_60px_-40px_rgba(11,11,18,0.5)]">
-                <WaitlistForm showGoal />
+                <WaitlistForm showGoal source="waitlist-page" />
               </div>
             </Reveal>
 
