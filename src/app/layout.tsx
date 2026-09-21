@@ -15,19 +15,26 @@ const body = Inter({
   subsets: ["latin"],
 });
 
+const TITLE = "GetHyre.ai: AI-Driven Placement Solution";
+const DESCRIPTION =
+  "AI-driven placement prep for students and early-career job seekers in India. Resume optimization, job matching and mock interviews. Join the private beta.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gethyre.ai"),
   title: {
-    default: "GetHyre.ai: AI career prep for students in India",
+    default: TITLE,
     template: "%s · GetHyre.ai",
   },
-  description:
-    "One app for your entire job hunt. Fix your resume, practise the interview, close your skill gaps and apply only where you actually fit. Private beta.",
+  description: DESCRIPTION,
   openGraph: {
-    title: "GetHyre.ai: AI career prep for students in India",
-    description:
-      "One app for your entire job hunt: AI resume optimisation, job match scoring, mock interviews and a week-by-week career plan. Private beta.",
+    title: TITLE,
+    description: DESCRIPTION,
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
