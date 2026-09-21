@@ -25,21 +25,32 @@ import { plans, productLinks } from "@/lib/site";
 const steps = [
   {
     title: "Add your resume and target role",
-    body: "Upload an existing resume or build one from scratch. Tell us the role you're aiming for.",
+    body: "Upload your resume and tell us the role you're aiming for.",
   },
   {
     title: "Get your Employability Score",
     body: "One number out of 100, with a breakdown underneath it, so you know exactly which part is weak.",
   },
   {
-    title: "Fix the weak parts",
-    body: "AI rewrites your resume per job description, scores your mock interviews, and builds a week-by-week plan around your real skill gaps.",
+    title: "Practise AI mock interviews",
+    body: "Practise role-specific questions and get scored on communication, content, clarity and confidence, with a full breakdown after every session.",
   },
   {
     title: "Apply to jobs that actually fit",
     body: "Every listing in your feed carries a match score against your profile, so you stop spraying applications.",
   },
 ];
+
+const cardLinks = productLinks.map((link) =>
+  link.href === "/job-match"
+    ? {
+        ...link,
+        label: "Explore Jobs",
+        blurb:
+          "Explore jobs matched to your profile, with an AI match score on every listing.",
+      }
+    : link,
+);
 
 const features: {
   href?: string;
@@ -107,11 +118,11 @@ const features: {
       "Full version history of every resume",
     ],
     visual: (
-      <div className="relative">
-        <BrowserFrame>
+      <div className="flex flex-col items-center gap-6">
+        <BrowserFrame className="w-full">
           <AtsScoreCard />
         </BrowserFrame>
-        <div className="absolute -bottom-8 -right-2 w-56 sm:-right-8 sm:w-64">
+        <div className="w-full max-w-sm">
           <SuggestedEditCard />
         </div>
       </div>
@@ -150,8 +161,8 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.05}>
                 <h1 className="mt-6 text-4xl font-extrabold leading-[1.08] text-ink sm:text-5xl md:text-6xl">
-                  One app for your{" "}
-                  <span className="brand-gradient-text">entire job hunt.</span>
+                  India&apos;s AI-Powered{" "}
+                  <span className="brand-gradient-text">Placement Ecosystem</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.1}>
@@ -198,7 +209,7 @@ export default function Home() {
             </p>
           </Reveal>
           <RevealStagger className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {productLinks.map((link) => (
+            {cardLinks.map((link) => (
               <RevealItem key={link.href}>
                 <Link
                   href={link.href}
@@ -229,6 +240,35 @@ export default function Home() {
                     </svg>
                   </span>
                 </Link>
+              </RevealItem>
+            ))}
+          </RevealStagger>
+        </Container>
+      </section>
+
+      {/* How it works */}
+      <section className="py-20 sm:py-24">
+        <Container>
+          <Reveal>
+            <SectionHeading
+              eyebrow="How it works"
+              title="From no idea where you stand to a plan, in one sitting"
+            />
+          </Reveal>
+          <RevealStagger className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, i) => (
+              <RevealItem key={step.title}>
+                <div className="relative h-full rounded-2xl border border-zinc-200 bg-white p-6">
+                  <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl font-display text-sm font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <h3 className="mt-4 text-base font-bold text-ink">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                    {step.body}
+                  </p>
+                </div>
               </RevealItem>
             ))}
           </RevealStagger>
@@ -287,35 +327,6 @@ export default function Home() {
           </Container>
         </section>
       ))}
-
-      {/* How it works */}
-      <section className="py-20 sm:py-24">
-        <Container>
-          <Reveal>
-            <SectionHeading
-              eyebrow="How it works"
-              title="From no idea where you stand to a plan, in one sitting"
-            />
-          </Reveal>
-          <RevealStagger className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step, i) => (
-              <RevealItem key={step.title}>
-                <div className="relative h-full rounded-2xl border border-zinc-200 bg-white p-6">
-                  <span className="brand-gradient flex h-10 w-10 items-center justify-center rounded-xl font-display text-sm font-bold text-white">
-                    {i + 1}
-                  </span>
-                  <h3 className="mt-4 text-base font-bold text-ink">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                    {step.body}
-                  </p>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealStagger>
-        </Container>
-      </section>
 
       {/* Pricing preview */}
       <section className="border-t border-zinc-100 bg-zinc-50/50 py-20 sm:py-24">

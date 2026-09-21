@@ -22,7 +22,7 @@ export function WaitlistCta({
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-white/80">{body}</p>
               <div className="mt-8 flex w-full justify-center">
-                <WaitlistForm variant="dark" />
+                <WaitlistForm variant="dark" source="inline-cta" />
               </div>
             </div>
           </div>

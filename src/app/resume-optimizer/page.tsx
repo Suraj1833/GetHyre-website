@@ -9,7 +9,6 @@ import { BrowserFrame } from "@/components/ui/DeviceFrame";
 import {
   AtsScoreCard,
   SuggestedEditCard,
-  MatchScoreChip,
 } from "@/components/mockups/ResumeAts";
 
 export const metadata: Metadata = {
@@ -31,14 +30,11 @@ export default function ResumeOptimizerPage() {
         }
         body="Upload your resume and GetHyre scores it out of 100, flags exactly which sections are weak and rewrites the content against the job you're actually applying to."
         visual={
-          <div className="relative">
-            <BrowserFrame>
-              <AtsScoreCard />
-            </BrowserFrame>
-            <div className="absolute -bottom-10 -right-2 w-56 sm:-right-10 sm:w-64">
-              <SuggestedEditCard />
-            </div>
-          </div>
+          <BrowserFrame className="w-full">
+            <AtsScoreCard>
+              <SuggestedEditCard embedded />
+            </AtsScoreCard>
+          </BrowserFrame>
         }
       />
 
@@ -80,11 +76,8 @@ export default function ResumeOptimizerPage() {
           "Full version history, so you can always go back",
         ]}
         visual={
-          <div className="flex flex-col items-center gap-6">
-            <div className="w-full max-w-sm">
-              <SuggestedEditCard />
-            </div>
-            <MatchScoreChip />
+          <div className="mx-auto w-full max-w-sm">
+            <SuggestedEditCard />
           </div>
         }
       />

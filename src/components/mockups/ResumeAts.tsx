@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import { CountUp } from "@/components/ui/CountUp";
 import { StatusPill, AiTag } from "@/components/ui/Bits";
 
@@ -12,7 +13,7 @@ const checks = [
   { label: "Contact Info", status: "bad" as const, note: "Missing", detail: "No LinkedIn URL detected" },
 ];
 
-export function AtsScoreCard() {
+export function AtsScoreCard({ children }: { children?: React.ReactNode }) {
   return (
     <div className="rounded-2xl bg-white p-5">
       <div className="flex items-start justify-between gap-4">
@@ -62,14 +63,21 @@ export function AtsScoreCard() {
           <li>· Add your LinkedIn profile URL to contact info</li>
         </ul>
       </div>
+
+      {children ? <div className="mt-2.5">{children}</div> : null}
     </div>
   );
 }
 
-export function SuggestedEditCard() {
+export function SuggestedEditCard({ embedded = false }: { embedded?: boolean }) {
   return (
     <motion.div
-      className="w-full rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_20px_45px_-25px_rgba(11,11,18,0.5)]"
+      className={clsx(
+        "w-full",
+        embedded
+          ? "rounded-xl border border-zinc-100 bg-zinc-50/60 p-3"
+          : "rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_20px_45px_-25px_rgba(11,11,18,0.5)]",
+      )}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
